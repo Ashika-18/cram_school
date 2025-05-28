@@ -1,0 +1,156 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#teacher-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem; /* 150px */
+    height: 20rem; /* 200px */
+    overflow: hidden;
+    z-index: 1;
+}
+
+#teacher-container::before {
+    content: '';
+    position: absolute;
+    top: -1.25rem; /* -20px */
+    left: -1.25rem; /* -20px */
+    right: -1.25rem; /* -20px */
+    bottom: -1.25rem; /* -20px */
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(255, 165, 0, 0.5), rgba(255, 255, 0, 0.5), transparent);
+    animation: burn-background 2s linear infinite;
+    z-index: -1;
+}
+
+@keyframes burn-background {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(0.625rem) scale(1.05); opacity: 0.6; } /* 10px */
+    100% { transform: translateY(0) scale(1); opacity: 0.8; }
+}
+
+#teacher-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards, burn 2s linear infinite;
+    object-fit: contain;
+}
+
+header h1 {
+    margin-top: 2rem; /* 60px */
+    margin-bottom: 0.5rem; /* 8px */
+    z-index: 2;
+    position: relative;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-style: italic;
+    z-index: 2;
+    position: relative;
+    margin-top: 5rem;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes burn {
+    0% { filter: drop-shadow(0 0 0.3125rem red); } /* 5px */
+    50% { filter: drop-shadow(0 0 0.625rem orange); } /* 10px */
+    100% { filter: drop-shadow(0 0 0.3125rem red); } /* 5px */
+}
+
+section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* 2px, 4px */
+    width: 80%;
+    max-width: 60rem; /* 960px */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section h2 {
+    color: #333;
+    border-bottom: 0.125rem solid #333; /* 2px */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+section ul li {
+    padding: 0.1875rem 0; /* 3px */
+}
+
+strong {
+    color: red;
+    font-weight: bold; /* 必要に応じて */
+}
+
+.contact-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.contact-button a {
+    display: inline-block;
+    padding: 0.5rem 0.9375rem; /* 8px, 15px */
+    background-color: #5cb85c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.3125rem; /* 5px */
+    transition: background-color 0.3s ease;
+}
+
+.contact-button a:hover {
+    background-color: #4cae4c;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
