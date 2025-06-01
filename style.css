@@ -48,12 +48,11 @@ section {
 
 /* --- ヘッダー --- */
 .hero-header {
-    background-image: url('images/家庭教師top_view.jpg'); /* ★ここを写真URLに差し替え★ */
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 10px 20px;
 }
 
 header {
@@ -98,10 +97,18 @@ header.scrolled {
     opacity: 0.8;
 }
 
+main {
+    text-align: center;
+}
+
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('images/teacher_top_view.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
     padding: 40px;
     display: inline-block;
+    text-align: center;
     border-radius: 10px;
 }
 
@@ -118,6 +125,55 @@ header.scrolled {
 .cta-button.large {
     font-size: 1.2em;
     padding: 15px 30px;
+}
+
+/* --- 講師紹介 --- */
+#teachers {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.teacher-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.teacher-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.teacher-card h3 {
+    color: var(--main-color);
+    margin-bottom: 5px;
+}
+
+.teacher-card p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .teachers-grid {
+        grid-template-columns: 1fr;
+    }
+    .teacher-card {
+        margin-bottom: 20px;
+    }
 }
 
 /* --- 特徴 --- */
@@ -209,7 +265,7 @@ header.scrolled {
 #contact {
     background-color: var(--main-color);
     color: white;
-    padding: 80px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
